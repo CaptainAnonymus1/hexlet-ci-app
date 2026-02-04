@@ -5,10 +5,18 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: make setup
-      - run: make start
-      - run: make test
-      - run: make lint
+      - name: Check out building
+      - run:
+          install build
+      - name: Check out installation
+      - run: 
+           npm install
+      - name: Check out testing
+      - run: 
+          npm test
+      - name: Check out lintting
+      - run: 
+          npx eslint .
       #- name: Check out repository code
       #  uses: actions/checkout@v5
       #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
