@@ -6,19 +6,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out building
-      - run:
+        run:
           install build
       - name: Check out installation
-      - run: 
+        run: 
            npm install
       - name: Check out testing
-      - run: 
+        run: 
           npm test
       - name: Check out lintting
-      - run: 
+        run: 
           npx eslint .
-      #- name: Check out repository code
-      #  uses: actions/checkout@v5
+      - name: Check out repository code
+        uses: actions/checkout@v5
       #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       #- run: echo "🖥️ The workflow is now ready to test your code on the runner."
       #- name: List files in the repository
