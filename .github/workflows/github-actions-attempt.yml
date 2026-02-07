@@ -5,19 +5,19 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out building
+      - name: create build
         run:
           install build
-      - name: Check out installation
+      - name: fulfill installation
         run: 
            npm install
-      - name: Check out testing
+      - name: execute testing
         run: 
           npm test
-      - name: Check out lintting
+      - name: perform lintting
         run: 
           npx eslint .
-      - name: Check out repository code
+      - name: Check repository code
         uses: actions/checkout@v5
       #- run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       #- run: echo "🖥️ The workflow is now ready to test your code on the runner."
