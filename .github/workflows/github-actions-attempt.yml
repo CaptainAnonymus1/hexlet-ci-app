@@ -13,11 +13,11 @@ jobs:
         # make depends on uv
        - name: Install dependencies
          run: |
-          pip install uv
+          make setup
           make install
+          make build
+          make start
        - name: Run linter and pytest
          run: |
-          make check          
-       - name: Run test coverage
-         run: |
-          make test-coverage
+          make test
+          make lint
