@@ -13,10 +13,8 @@ jobs:
         # make depends on uv
        - name: Install dependencies
          run: |
-          make setup
           make install
           make build
-          make start
        - name: Run linter and pytest
          run: |
           make test
