@@ -34,3 +34,9 @@ jobs:
          run: |
           make test
           make lint
+        # action from Hexlet
+       - name: Checkout
+         id: checkout
+         uses: actions/checkout@v4
+       - name: Print Hello from Hexlet
+         uses: hexlet-components/hello-from-hexlet-action@release
