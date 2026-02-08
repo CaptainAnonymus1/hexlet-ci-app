@@ -5,23 +5,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # clone repository
        - name: Checkout repository
-         uses: actions/checkout@v4
+         uses: actions/checkout@v6
+      # setup Node
        - name: Setup Node.js
-         uses: action/setup-node@v4
+         uses: actions/setup-node@v4
          with:
-            node-vertion: '18.x'
-            cash: 'npm'
+           node-vertion: '24'
+           cach: 'npm'
+      # install Node dependencied and run test
        - run: npm ci
        - run: npm test
+      # setup Python dependencies
        - name: Set up Python
          uses: actions/setup-python@v6
          with:
            python-version: '3.12'
-        # make depends on uv
-       - name: Install dependencies
+        # Install Python dependencies
+       - name: Install Python dependencies
          run: |
           make install
+        # build project
        - name: Build project
          run: |
           make build
